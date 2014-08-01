@@ -26,6 +26,12 @@ siStripCMMonitor = cms.EDAnalyzer(
         Min = cms.untracked.double(0),
         Max = cms.untracked.double(10000)
         ),
+ LumisectionHistogramConfig = cms.untracked.PSet(
+        Enabled = cms.untracked.bool(True),
+        NBins = cms.untracked.uint32(2400),
+        Min = cms.untracked.double(0),
+        Max = cms.untracked.double(150)
+        ),
     MedianAPV1vsAPV0HistogramConfig = cms.untracked.PSet(
         Enabled = cms.untracked.bool(True)
         ),
@@ -38,10 +44,16 @@ siStripCMMonitor = cms.EDAnalyzer(
     MeanCMPerFedvsTimeHistogramConfig = cms.untracked.PSet(
         Enabled = cms.untracked.bool(True)
         ),
+    MeanCMPerFedvsLumisectionHistogramConfig = cms.untracked.PSet(
+        Enabled = cms.untracked.bool(True)
+        ),
     VariationsPerFedvsFedIdHistogramConfig = cms.untracked.PSet(
         Enabled = cms.untracked.bool(True)
         ),
     VariationsPerFedvsTimeHistogramConfig = cms.untracked.PSet(
+        Enabled = cms.untracked.bool(True)
+        ),
+    VariationsPerFedvsLumisectionHistogramConfig = cms.untracked.PSet(
         Enabled = cms.untracked.bool(True)
         ),
     MedianAPV1vsAPV0perFEDHistogramConfig = cms.untracked.PSet(
