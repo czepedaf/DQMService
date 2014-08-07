@@ -51,7 +51,7 @@ void CMHistograms::initialise(const edm::ParameterSet& iConfig,
   }
 }
 
-void CMHistograms::fillHistograms(const std::vector<CMvalues>& aVec, float aTime, const double aLS, unsigned int aFedId)
+void CMHistograms::fillHistograms(const std::vector<CMvalues>& aVec, float aTime, unsigned int aFedId)
 {
 
   if (doFed_[aFedId]){
@@ -91,10 +91,10 @@ void CMHistograms::fillHistograms(const std::vector<CMvalues>& aVec, float aTime
 
   fillHistogram(meanCMPerFedvsFedId_,aFedId,lMean);
   fillHistogram(meanCMPerFedvsTime_,aTime,lMean);
-  fillHistogram(meanCMPerFedvsLumisection_,aLS,lMean);
+  fillHistogram(meanCMPerFedvsLumisection_,aTime,lMean);
   fillHistogram(variationsPerFedvsFedId_,aFedId,lMean-lPrevMean);
   fillHistogram(variationsPerFedvsTime_,aTime,lMean-lPrevMean);
-  fillHistogram(variationsPerFedvsLumisection_,aLS,lMean-lPrevMean);
+  fillHistogram(variationsPerFedvsLumisection_,aTime,lMean-lPrevMean);
 
 
 }
