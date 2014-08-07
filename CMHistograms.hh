@@ -48,7 +48,7 @@ public:
 		  std::ostringstream* pDebugStream
 		  );
 
-  void fillHistograms(const std::vector<CMvalues>& aVec, float aTime, const double aLS, unsigned int aFedId);
+  void fillHistograms(const std::vector<CMvalues>& aVec, float aTime, unsigned int aFedId);
   //  void fillHistograms(const std::vector<CMvalues>& aVec, float aLS, unsigned int aFedId);
 
 
