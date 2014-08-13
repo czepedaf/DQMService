@@ -51,7 +51,7 @@ void CMHistograms::initialise(const edm::ParameterSet& iConfig,
   }
 }
 
-void CMHistograms::fillHistograms(const std::vector<CMvalues>& aVec, float aTime, unsigned int aFedId)
+void CMHistograms::fillHistograms(const std::vector<CMvalues>& aVec, float aTime, float aLumisection,unsigned int aFedId)
 {
 
   if (doFed_[aFedId]){
@@ -91,10 +91,10 @@ void CMHistograms::fillHistograms(const std::vector<CMvalues>& aVec, float aTime
 
   fillHistogram(meanCMPerFedvsFedId_,aFedId,lMean);
   fillHistogram(meanCMPerFedvsTime_,aTime,lMean);
-  fillHistogram(meanCMPerFedvsLumisection_,aTime,lMean);
+  fillHistogram(meanCMPerFedvsLumisection_,aLumisection,lMean);
   fillHistogram(variationsPerFedvsFedId_,aFedId,lMean-lPrevMean);
   fillHistogram(variationsPerFedvsTime_,aTime,lMean-lPrevMean);
-  fillHistogram(variationsPerFedvsLumisection_,aTime,lMean-lPrevMean);
+  fillHistogram(variationsPerFedvsLumisection_,aLumisection,lMean-lPrevMean);
 
 
 }
@@ -147,8 +147,8 @@ void CMHistograms::bookTopLevelHistograms(DQMStore* dqm)
 
   bookProfile(meanCMPerFedvsLumisection_,
 	      "MeanCMPerFedvsLumisection",
-	      "<CM> vs Lumisection",
-	      0,150,
+	      "<CM> vs lumisection",
+	      0,1000,
 	      "Lumisection","<CM>^{FED}");
   
   bookProfile(variationsPerFedvsFedId_,
@@ -165,8 +165,8 @@ void CMHistograms::bookTopLevelHistograms(DQMStore* dqm)
 
   bookProfile(variationsPerFedvsLumisection_,
 	      "VariationsPerFedvsLumisection",
-	      "<CM> vs Lumisection",
-	      0,150,
+	      "<CM> vs lumisection",
+	      0,1000,
 	      "Lumisection","<CM>^{FED}_{t}-<CM>^{FED}_{t-1}");
   
 
