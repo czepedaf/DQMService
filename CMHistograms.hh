@@ -48,8 +48,7 @@ public:
 		  std::ostringstream* pDebugStream
 		  );
 
-  void fillHistograms(const std::vector<CMvalues>& aVec, float aTime, unsigned int aFedId);
-  //  void fillHistograms(const std::vector<CMvalues>& aVec, float aLS, unsigned int aFedId);
+  void fillHistograms(const std::vector<CMvalues>& aVec, float aTime,float aLumisection,unsigned int aFedId);
 
 
    //book the top level histograms
