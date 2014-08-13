@@ -75,12 +75,6 @@ public:
 			     const edm::ParameterSet& psetContainingConfigPSet,
 			     std::ostringstream* pDebugStream
 			     );
-  //load the config for a histogram... Lumisection
-  void getConfigForHistogramLS(HistogramConfig & aConfig,
-			     const std::string& configName, 
-			     const edm::ParameterSet& psetContainingConfigPSet,
-			     std::ostringstream* pDebugStream
-			     );
 
   //book an individual hiostogram if enabled in config
   void bookHistogram(HistogramConfig & aConfig,
