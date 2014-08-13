@@ -349,16 +349,14 @@ SiStripCMMonitorPlugin::analyze(const edm::Event& iEvent,
     else if (fillWithLocalEvtNum_) lTime = evt_;//iEvent.id().event();
     else lTime = iEvent.orbitNumber()/11223.;
 
-    cmHists_.fillHistograms(values,lTime,fedId);
+    cmHists_.fillHistograms(values,lTime,lTime,fedId);
 
     float lLumisection = 0;
     if (fillWithEvtNum_) lLumisection = iEvent.id().event();
     else if (fillWithLocalEvtNum_) lLumisection = evt_;//iEvent.id().event();
-    else lLumisection = iEvent.orbitNumber()/262144.0;
+    else lLumisection = iEvent.orbitNumber()/262144.;
 
-    cmHists_.fillHistograms(values,lLumisection,fedId);
-
-
+    cmHists_.fillHistograms(values,lLumisection,lLumisection,fedId);
 
     //if (printDebug_ > 0 && isBeingFilled && firstEvent) edm::LogVerbatim("SiStripMonitorHardware") << infoStream.str();
  
